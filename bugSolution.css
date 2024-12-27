@@ -1,0 +1,15 @@
+The solution involves removing unnecessary spaces within the `calc()` function and ensuring consistent units.  Make sure there are no spaces between the percentage or other units and the operator (+, -, *, /). If using different units, convert them to a common unit before using them in `calc()`. For instance, to reliably calculate width, always use same units:
+
+```css
+/* Incorrect */
+width: calc(100% - 10 px);
+
+/* Correct */
+width: calc(100% - 10px);
+
+/* Inconsistent units (problematic) */
+width: calc(50% - 2em);
+
+/* Consistent units (better) */
+width: calc(50% - 32px); /* Assuming 1em = 16px */
+```
